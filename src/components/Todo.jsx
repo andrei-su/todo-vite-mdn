@@ -17,7 +17,11 @@ function Todo(props) {
         <button type="button" className="btn">
           Edit <span className="visually-hidden">{props.name}</span>
         </button>
-        <button type="button" className="btn btn__danger">
+        <button
+          type="button"
+          className="btn btn__danger"
+          onClick={() => props.deleteTask(props.id)}
+        >
           Delete <span className="visually-hidden">{props.name}</span>
         </button>
       </div>
@@ -30,6 +34,7 @@ Todo.propTypes = {
   name: PropTypes.string.isRequired,
   completed: PropTypes.bool,
   toggleTaskCompleted: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 }
 
 export default Todo
