@@ -1,7 +1,9 @@
-function Form() {
+import PropTypes from 'prop-types'
+
+function Form(props) {
   function handleSubmit(event) {
     event.preventDefault()
-    alert('Hello, world!')
+    props.addTask('Say hello!')
   }
 
   return (
@@ -23,6 +25,10 @@ function Form() {
       </button>
     </form>
   )
+}
+
+Form.propTypes = {
+  addTask: PropTypes.func.isRequired,
 }
 
 export default Form
